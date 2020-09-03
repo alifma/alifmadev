@@ -1,0 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Roboto&display=swap");
+:root {
+  --bg: #201f1f;
+  --darker: #171717;
+  --oren: #fc9611;
+  --pink: #fd675d;
+  --merah: #ff2112;
+  --abu: #424242;
+  --putih: #fff;
+}
+
+.oren {
+  color: var(--oren);
+}
