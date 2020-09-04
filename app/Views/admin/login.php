@@ -28,12 +28,17 @@
                     <div class="p-4 m-3">
                         <img src="/stisla-master/assets/img/stisla-fill.svg" alt="logo" width="80" class="shadow-light rounded-circle mb-5 mt-2">
                         <h4 class="text-dark font-weight-normal">Welcome to <span class="font-weight-bold">Alifma<span class="oren">Dev</span></span></h4>
-                        <form method="POST" action="#" class="needs-validation" novalidate="">
+                        <?php if (!empty(session()->getFlashdata('gagal'))) { ?>
+                            <div class="alert alert-warning" role="alert">
+                                <?= session()->getFlashdata('gagal');; ?>
+                            </div>
+                        <?php } ?>
+                        <form method="POST" action="<?= base_url('/login/cek_login'); ?>" class="needs-validation" novalidate="">
                             <div class="form-group">
-                                <label for="email">Email</label>
-                                <input id="email" setfocus type="email" class="form-control" name="email" tabindex="1" required autofocus>
+                                <label for="username">Username</label>
+                                <input id="username" setfocus type="text" class="form-control" name="username" tabindex="1" required autofocus>
                                 <div class="invalid-feedback">
-                                    Please fill in your email
+                                    Please fill in your username
                                 </div>
                             </div>
 
@@ -47,17 +52,8 @@
                                 </div>
                             </div>
 
-                            <div class="form-group">
-                                <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" name="remember" class="custom-control-input" tabindex="3" id="remember-me">
-                                    <label class="custom-control-label" for="remember-me">Remember Me</label>
-                                </div>
-                            </div>
-
                             <div class="form-group text-right">
-                                <a href="auth-forgot-password.html" class="float-left mt-3">
-                                    Forgot Password?
-                                </a>
+
                                 <button type="submit" class="btn btn-primary btn-lg btn-icon icon-right" tabindex="4">
                                     Login
                                 </button>
