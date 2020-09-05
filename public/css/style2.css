@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Roboto&display=swap");
+@media (max-width: 991.98px) {
+  .navbar {
+    min-height: 80px;
+  }
+}
+
+.oren {
+  color: #fc9611;
+}
+
+.konten {
+  min-height: 75vh;
+}
+
+.navbar *,
+.nnt {
+  font-family: "Nunito", sans-serif;
+}

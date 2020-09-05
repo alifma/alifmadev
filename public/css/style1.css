@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Roboto&display=swap");
+:root {
+}
+* {
+  font-family: "Roboto", sans-serif;
+}
+html > body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Font Color */
+main > p,
+desc > p,
+i {
+  color: #fff;
+}
+/* Font Style */
+p {
+  font-family: "Roboto", sans-serif;
+}
+.job {
+  font-weight: bold;
+  font-family: "Nunito", sans-serif;
+}
+.nnt,
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Nunito", sans-serif;
+}
+
+.judulSection {
+  color: #fff;
+}
+header,
+main,
+footer {
+  background-color: #201f1f;
+}
+html > body {
+  background-color: #201f1f;
+}
+
+html > body > .footer {
+  background-color: #201f1f;
+  color: #fff;
+}
+.oren {
+  color: #fc9611;
+}
+.blek {
+  color: #171717;
+}
+
+.hl {
+  font-weight: bold;
+  font-size: large;
+  font-style: italic;
+}
+#link {
+  text-decoration: none;
+  color: #fff;
+}
+
+header > nav > div > ul > li.nav-item > a:hover {
+  color: #fc9611;
+}
+
+#btn-email,
+#btn-git,
+#btn-det,
+#btn1,
+#btn2 {
+  background-color: #fc9611;
+}
+
+footer {
+  background-color: #201f1f;
+  text-align-last: center;
+}
+html > body > .konten {
+  padding-top: 18px;
+  min-height: 70vh;
+  background-color: #fff;
+}
+
+html > body > .konten > h1 {
+  color: #171717;
+}
+
+/* Sizing Image Skill */
+.skill-icon > img {
+  width: 75px;
+}
+
+body > aside {
+  background-color: #424242;
+}
+.itemnya {
+  text-align: justify;
+}
+.skillnya {
+  /* max-width: 20rem; */
+}
+@media (max-width: 991.98px) {
+  .manjang {
+    flex: 1 0;
+  }
+  .skillgmbr {
+    flex-grow: 1;
+    flex-basis: 1;
+  }
+  .manjang > ul > a {
+    padding-top: 0;
+  }
+  .blek {
+    color: #171717;
+    /* max-lines: 3; */
+    max-height: 75px;
+    /* white-space: nowrap; */
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .teksnya {
+    flex-basis: 1;
+  }
+  .authornya {
+    text-align: center;
+  }
+  .gmbrbos {
+    object-fit: wrap;
+  }
+  .skillnya {
+    /* max-width: 15rem; */
+  }
+}

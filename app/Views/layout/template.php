@@ -9,9 +9,6 @@
     <!-- General CSS Files -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-
-    <!-- CSS Libraries -->
-
     <!-- Template CSS -->
     <link rel="stylesheet" href="/stisla-master/assets/css/style.css">
     <link rel="stylesheet" href="/stisla-master/assets/css/components.css">
@@ -64,8 +61,9 @@
                         <li class="nav-item dropdown">
                             <a href="#" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Dashboard</span></a>
                             <ul class="dropdown-menu">
-                                <li><a class="nav-link" href="index-0.html">General Dashboard</a></li>
-                                <li><a class="nav-link" href="index.html">Ecommerce Dashboard</a></li>
+                                <li><a class="nav-link" href="<?= base_url('/admin/kerja'); ?>">Catatan Project</a></li>
+                                <li><a class="nav-link" href="<?= base_url('/admin/kerja'); ?>">Catatan Kerjaan</a></li>
+                                <li><a class="nav-link" href="<?= base_url('/admin/saran'); ?>">Saran</a></li>
                             </ul>
                         </li>
                         <li class="menu-header">Pages</li>
@@ -85,7 +83,7 @@
                         </li>
                     </ul>
                     <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
-                        <a href="https://getstisla.com/docs" class="btn btn-primary btn-lg btn-block btn-icon-split">
+                        <a href="<?= base_url('/login/logout'); ?>" class="btn btn-primary btn-lg btn-block btn-icon-split">
                             <i class="fas fa-rocket"></i> Dahlah
                         </a>
                     </div>
@@ -105,7 +103,7 @@
             </div>
             <footer class="main-footer text-center">
                 <div class="text-center">
-                    Copyright &copy; 2020 <div class="bullet"></div> Design By <a href="https://nauval.in/">Muhamad Nauval Azhar</a> Edited By <a href="https://alifma.com">AlifmaDev</a>
+                    Copyright &copy; <a href="https://alifma.com">AlifmaDev</a> 2020
                 </div>
                 <div class="footer-right">
                     2.3.0

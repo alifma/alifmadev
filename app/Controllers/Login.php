@@ -9,18 +9,21 @@ class Login extends BaseController
     protected $session;
     public function __construct()
     {
-        helper('form');
+        helper('login');
         $session = \Config\Services::session();
-
         $this->loginModel = new LoginModel();
     }
     public function index()
     {
-        $data = [
-            'title' => 'Login',
-            'header' => 'Login Pages'
-        ];
-        return view('admin/login', $data);
+        if (!(session()->get('username') == '')) {
+            return redirect()->to('admin');
+        } else {
+            $data = [
+                'title' => 'Login',
+                'header' => 'Login Pages'
+            ];
+            return view('admin/login', $data);
+        }
     }
     public function cek_login()
     {
