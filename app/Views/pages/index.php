@@ -279,20 +279,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
     <script>
-        function previewImg() {
-            const sampul = document.querySelector("#sampul");
-            const sampulLabel = document.querySelector(".form-file-text");
-            const imgPreview = document.querySelector(".img-preview");
-            // Ganti nama File
-            sampulLabel.textContent = sampul.files[0].name;
-            // Ganti Preview
-            const fileSampul = new FileReader();
-            fileSampul.readAsDataURL(sampul.files[0]);
-            fileSampul.onload = function(e) {
-                imgPreview.src = e.target.result;
-            };
-        }
-
         function maju() {
             $("#btn1").on("click", function(e) {
                 e.preventDefault();

@@ -17,3 +17,7 @@
 .nnt {
   font-family: "Nunito", sans-serif;
 }
+
+html > body {
+  background-color: #f4f6f9;
+}
