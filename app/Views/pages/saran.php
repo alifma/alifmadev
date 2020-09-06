@@ -19,13 +19,13 @@
                             <input type="hidden" class="form-control" id="posisi" name="posisi" placeholder="President of Untirta" value="-">
                             <input type="hidden" class="form-control <?= ($validation->hasError('email') ? 'is-invalid' : ''); ?>" name="email" id="exampleFormControlInput1" placeholder="name@example.com" value="anonim@alifma.com">
                             <label for="nama" class="form-label">Nama Lengkap</label>
-                            <input type="text" class="form-control <?= ($validation->hasError('nama') ? 'is-invalid' : ''); ?>" id="nama" placeholder="" name="nama">
+                            <input type="text" class="form-control <?= ($validation->hasError('nama') ? 'is-invalid' : ''); ?>" id="nama" placeholder="" value="<?= old('nama'); ?>" name="nama">
                             <div class="invalid-feedback">
                                 <?= $validation->getError('nama'); ?>
                             </div>
                             <div class="mb-3">
                                 <label for="saran" class="form-label">Masukan, Saran atau Apapun</label>
-                                <textarea class="form-control <?= ($validation->hasError('saran') ? 'is-invalid' : ''); ?>" id="saran" name="saran" value="<?= old('saran'); ?>" rows="3" style="min-height:100px;"></textarea>
+                                <textarea class="form-control <?= ($validation->hasError('saran') ? 'is-invalid' : ''); ?>" id="saran" name="saran" rows="3" style="min-height:100px;"><?= old('saran'); ?></textarea>
                                 <div class="invalid-feedback">
                                     <?= $validation->getError('saran'); ?>
                                 </div>

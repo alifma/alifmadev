@@ -25,8 +25,8 @@
             <div class='container konten'>
                 <?= $this->renderSection('content'); ?>
             </div>
-            <?= $this->include('layout/public-footer'); ?>
         </section>
+        <?= $this->include('layout/public-footer'); ?>
 
     </div>
     <!-- General JS Scripts -->

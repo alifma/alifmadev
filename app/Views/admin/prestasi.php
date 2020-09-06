@@ -25,7 +25,10 @@
                                 <td><?= $d['deskripsi']; ?></td>
                                 <td><?= $d['tahun']; ?></td>
                                 <td><?= $d['tgl']; ?></td>
-                                <td><a href="/admin/delPrestasi/<?= $d['id']; ?>" class="btn btn-sm btn-danger">Hapus</a></td>
+                                <td>
+                                    <a href="/admin/delPrestasi/<?= $d['id']; ?>" class="btn btn-sm btn-danger">Hapus</a>
+                                    <a href="/admin/editPrestasi/<?= $d['id']; ?>" class="btn btn-sm btn-warning">Edit</a>
+                                </td>
                             </tr>
                         <?php endforeach; ?>
                     </table>

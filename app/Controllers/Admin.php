@@ -82,7 +82,6 @@ class Admin extends BaseController
             'nama' => 'required',
             'deskripsi' => 'required',
             'tahun' => 'required',
-            'tgl' => 'required',
         ])) {
             return redirect()->to('/admin/addPrestasi')->withInput();
         }
@@ -90,7 +89,6 @@ class Admin extends BaseController
             'nama' => $this->request->getVar('nama'),
             'deskripsi' => $this->request->getVar('deskripsi'),
             'tahun' => $this->request->getVar('tahun'),
-            'tgl' => $this->request->getVar('tgl'),
         ]);
         session()->setFlashdata('success', 'Prestasi Berhasil Ditambahkan');
         return redirect()->to('/admin/prestasi');
@@ -101,5 +99,41 @@ class Admin extends BaseController
         $this->prestasiModel->delete($id);
         session()->setFlashdata('success', 'Prestasi berhasil dihapus');
         return redirect()->to('/admin/prestasi');
+    }
+    public function editPrestasi($id)
+    {
+        $data = [
+            'title' => "Edit Prestasi",
+            'header' => 'Ubah Prestasi',
+            'validation' => \Config\Services::validation(),
+            'prestasi' => $this->prestasiModel->getPrestasi($id)
+        ];
+        return view('admin/prestasi-edit', $data);
+    }
+
+    public function updatePrestasi($id)
+    {
+        // Cek Judul
+        $namaLama = $this->prestasiModel->getPrestasi($this->request->getVar('id'));
+        if ($namaLama['nama'] == $this->request->getVar('nama')) {
+            $rule_nama = 'required';
+        } else {
+            $rule_nama = 'required|is_unique[prestasi.nama]';
+        }
+        if (!$this->validate([
+            'nama' => $rule_nama,
+            'deskripsi' => 'required',
+            'tahun' => 'required',
+        ])) {
+            return redirect()->to('/admin/editPrestasi/' . $this->request->getVar('id'))->withInput();
+        }
+        $this->prestasiModel->save([
+            'id' => $id,
+            'nama' => $this->request->getVar('nama'),
+            'deskripsi' => $this->request->getVar('deskripsi'),
+            'tahun' => $this->request->getVar('tahun'),
+        ]);
+        session()->setFlashdata('success', 'Data berhasil diubah ');
+        return redirect()->to('/admin/prestasi/');
     }
 }
