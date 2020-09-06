@@ -1,4 +1,4 @@
-<?= $this->extend('layout/template'); ?>
+<?= $this->extend('layout/admin-template'); ?>
 <?= $this->section('content'); ?>
 <div class="container konten">
     <div class="row">

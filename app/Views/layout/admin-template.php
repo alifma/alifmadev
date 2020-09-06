@@ -13,6 +13,9 @@
     <link rel="stylesheet" href="/stisla-master/assets/css/style.css">
     <link rel="stylesheet" href="/stisla-master/assets/css/components.css">
     <link rel="stylesheet" href="/style.css">
+    <!-- TinyMCE -->
+    <script src="https://cdn.tiny.cloud/1/p0suowz1sdsjmvbbj2025bem81keamueju60hiktyax6uinz/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+
 </head>
 
 <body>
@@ -68,6 +71,16 @@
                         </li>
                         <li class="menu-header">Pages</li>
                         <li class="nav-item dropdown">
+                            <a href="#" class="nav-link has-dropdown"><i class="far fa-user"></i> <span>Profile</span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="<?= base_url('/admin/pendidikan'); ?>">Pendidikan</a></li>
+                                <li><a href="<?= base_url('/admin/exp'); ?>">Pengalaman</a></li>
+                                <li><a href="<?= base_url('/admin/skill'); ?>">Kemampuan</a></li>
+                                <li><a href="<?= base_url('/admin/org'); ?>">Organisasi</a></li>
+                                <li><a href="<?= base_url('/admin/prestasi'); ?>">Prestasi</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
                             <a href="#" class="nav-link has-dropdown"><i class="far fa-user"></i> <span>User</span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">Manage Role</a></li>
@@ -120,7 +133,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="/stisla-master/assets/js/stisla.js"></script>
 
-    <!-- JS Libraies -->
+    <!-- TinyMCE -->
+    <script>
+        tinymce.init({
+            selector: 'textarea',
+            plugins: 'a11ychecker advcode casechange formatpainter linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tinycomments tinymcespellchecker',
+            toolbar: 'a11ycheck addcomment showcomments casechange checklist code formatpainter pageembed permanentpen table',
+            toolbar_mode: 'floating',
+            tinycomments_mode: 'embedded',
+            tinycomments_author: 'Author name',
+        });
+    </script>
 
     <!-- Template JS File -->
     <script src="/stisla-master/assets/js/scripts.js"></script>

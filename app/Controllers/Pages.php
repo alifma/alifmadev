@@ -2,14 +2,17 @@
 
 namespace App\Controllers;
 
+use App\Models\PrestasiModel;
 use App\Models\SaranModel;
 
 class Pages extends BaseController
 {
     protected $saranModel;
+    protected $prestasiModel;
     public function __construct()
     {
         $this->saranModel = new SaranModel();
+        $this->prestasiModel = new PrestasiModel();
     }
     public function index()
     {
@@ -17,8 +20,12 @@ class Pages extends BaseController
     }
     public function profile()
     {
+        $prestasi = $this->prestasiModel
+            ->orderBy('created_at', 'desc')
+            ->getPrestasi();
         $data = [
             'title' => 'Profile',
+            'prestasi' => $prestasi
         ];
         return view('pages/profile', $data);
     }
@@ -40,7 +47,7 @@ class Pages extends BaseController
     public function saran()
     {
         isLogin();
-        $saran = $this->saranModel->getSaran();
+        $saran = $this->saranModel->select('SELECT * ');
         $data = [
             'title' => 'List Saran',
             'saran' => $saran,

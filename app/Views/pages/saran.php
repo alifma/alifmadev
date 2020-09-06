@@ -11,38 +11,28 @@
                             <?= session()->getFlashdata('pesan'); ?>
                         </div>
                     <?php endif; ?>
-                    <h3 class="card-title text-center">Feel free to <span class="oren">contact</span> me</h3>
-                    <p class="card-text text-center">You can leave a feedback, suggestion or ask anything</p>
+                    <h3 class="card-title text-center">Silakan untuk <span class="oren">mengontak</span> Saya</h3>
+                    <p class="card-text text-center">Anda dapat memberikan saran, masukan atau apapun</p>
 
                     <form action="/pages/savesaran" method="post">
                         <div class="mb-3">
-                            <label for="nama" class="form-label">Fullname</label>
-                            <input type="text" class="form-control <?= ($validation->hasError('nama') ? 'is-invalid' : ''); ?>" id="nama" placeholder="Long Name" name="nama" value="<?= old('nama'); ?>">
+                            <input type="hidden" class="form-control" id="posisi" name="posisi" placeholder="President of Untirta" value="-">
+                            <input type="hidden" class="form-control <?= ($validation->hasError('email') ? 'is-invalid' : ''); ?>" name="email" id="exampleFormControlInput1" placeholder="name@example.com" value="anonim@alifma.com">
+                            <label for="nama" class="form-label">Nama Lengkap</label>
+                            <input type="text" class="form-control <?= ($validation->hasError('nama') ? 'is-invalid' : ''); ?>" id="nama" placeholder="" name="nama">
                             <div class="invalid-feedback">
                                 <?= $validation->getError('nama'); ?>
                             </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Email address</label>
-                            <input type="email" class="form-control <?= ($validation->hasError('email') ? 'is-invalid' : ''); ?>" name="email" id="exampleFormControlInput1" placeholder="name@example.com" value="<?= old('email'); ?>">
-                            <div class="invalid-feedback">
-                                <?= $validation->getError('email'); ?>
+                            <div class="mb-3">
+                                <label for="saran" class="form-label">Masukan, Saran atau Apapun</label>
+                                <textarea class="form-control <?= ($validation->hasError('saran') ? 'is-invalid' : ''); ?>" id="saran" name="saran" value="<?= old('saran'); ?>" rows="3" style="min-height:100px;"></textarea>
+                                <div class="invalid-feedback">
+                                    <?= $validation->getError('saran'); ?>
+                                </div>
                             </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="posisi" class="form-label">Position</label>
-                            <input type="text" class="form-control" id="posisi" name="posisi" placeholder="President of Untirta" value="<?= old('posisi'); ?>">
-                        </div>
-                        <div class="mb-3">
-                            <label for="saran" class="form-label">Feedback or Suggestions</label>
-                            <textarea class="form-control <?= ($validation->hasError('saran') ? 'is-invalid' : ''); ?>" id="saran" name="saran" value="<?= old('saran'); ?>" rows="4"></textarea>
-                            <div class="invalid-feedback">
-                                <?= $validation->getError('saran'); ?>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary">Kirim</button>
                             </div>
-                        </div>
-                        <div class="text-center">
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                        </div>
                     </form>
                 </div>
             </div>

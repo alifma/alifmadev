@@ -8,16 +8,16 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link nnt font-weight-bold" href="<?= base_url('/profile'); ?>">Profile</a>
+                    <a class="nav-link nnt font-weight-bold" href="<?= base_url('/profile'); ?>">Profil</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link nnt font-weight-bold" href="<?= base_url('/project'); ?>">Project</a>
+                    <a class="nav-link nnt font-weight-bold" href="<?= base_url('/project'); ?>">Proyek</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link nnt font-weight-bold" href="<?= base_url('/blog'); ?>">Blog</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link nnt font-weight-bold" href="<?= base_url('/contact'); ?>">Contact</a>
+                    <a class="nav-link nnt font-weight-bold" href="<?= base_url('/contact'); ?>">Kontak</a>
                 </li>
             </ul>
         </div>

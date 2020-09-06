@@ -1,8 +1,8 @@
 <?= $this->extend('layout/admin-template'); ?>
 <?= $this->section('content'); ?>
-<h2 class="section-title">Saran dari orang-orang</h2>
-<p class="section-lead">They don't hate you, they loved you</p>
-
+<a href="<?= base_url('admin/addPrestasi'); ?>" class="btn btn-primary float-right">+ Prestasi</a>
+<h2 class="section-title">Prestasi yang pernah didapatkan</h2>
+<p class="section-lead">Tambah lagi lah, masa gini doang?</p>
 <div class="row">
     <div class="col">
         <div class="card">
@@ -12,19 +12,20 @@
                         <tr>
                             <th>#</th>
                             <th>Nama</th>
-                            <th>Saran</th>
-                            <th>Tanggal</th>
+                            <th>Deskripsi</th>
+                            <th>Tahun</th>
+                            <th>Tanggal </th>
                             <th>Aksi</th>
                         </tr>
                         <?php $i = 1 ?>
-
-                        <?php foreach ($saran as $s) : ?>
+                        <?php foreach ($prestasi as $d) : ?>
                             <tr>
                                 <td><?= $i++; ?></td>
-                                <td><?= $s['nama']; ?></td>
-                                <td><?= $s['saran']; ?></td>
-                                <td><?= $s['created_at']; ?></td>
-                                <td><a href="/pages/delSaran/<?= $s['id']; ?>" class="btn btn-sm btn-danger">Hapus</a></td>
+                                <td><?= $d['nama']; ?></td>
+                                <td><?= $d['deskripsi']; ?></td>
+                                <td><?= $d['tahun']; ?></td>
+                                <td><?= $d['tgl']; ?></td>
+                                <td><a href="/admin/delPrestasi/<?= $d['id']; ?>" class="btn btn-sm btn-danger">Hapus</a></td>
                             </tr>
                         <?php endforeach; ?>
                     </table>

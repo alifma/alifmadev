@@ -25,16 +25,16 @@
             <div class="manjang navbar-nav-scroll order-2 order-md-0 d-flex justify-content-center justify-content-md-start mt-1 mt-md-0">
                 <ul class="navbar-nav bd-navbar-nav flex-row py-2 py-md-0 text-center">
                     <li class="nav-item">
-                        <a class="nnt nav-link font-weight-bold" href="<?= base_url('/profile'); ?>">Profile</a>
+                        <a class="nnt nav-link font-weight-bold" href="<?= base_url('/profile'); ?>">Profil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nnt nav-link font-weight-bold " href="<?= base_url('/project'); ?>">Project</a>
+                        <a class="nnt nav-link font-weight-bold " href="<?= base_url('/project'); ?>">Proyek</a>
                     </li>
                     <li class="nav-item">
                         <a class="nnt nav-link font-weight-bold " href="<?= base_url('/blog'); ?>">Blog</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nnt nav-link font-weight-bold " href="<?= base_url('/contact'); ?>">Contact</a>
+                        <a class="nnt nav-link font-weight-bold " href="<?= base_url('/contact'); ?>">Kontak</a>
                     </li>
                 </ul>
             </div>
@@ -50,26 +50,20 @@
                     <img src="/img/frnt1.png" height="533" class="img-fluid mb-3 mb-md-0" alt="" />
                 </div>
                 <div class="col-md-8 order-md-1 col-lg-7 text-center text-md-left">
-                    <h2 class="oren nnt">Hi, I'm Alif Maulana Arifin</h2>
+                    <h2 class="oren nnt">Halo, Saya Alif Maulana Arifin</h2>
                     <h1 class="job mb-3 text-white">
                         Application Developer and Mathematics Educator
                     </h1>
                     <p class="desc mb-4 text-white" style="text-align: justify">
-                        I'm from Banten Province, Indonesia and I've been working as
-                        <span class="hl">Application Developer and Educator</span> for
-                        more than 2 years. My major is
-                        <span class="hl">Mathematics Education</span> and I currently
-                        working as a Mathematics Teacher at Nurul Huda Vocational
-                        Highschool since early 2020. I've been working with an education
-                        platform such as
+                        Saya berasal dari Provinsi Banten, Indonesia dan Saya sudah menjadi
+                        <span class="hl">Pengembang Aplikasi dan Pendidik</span> selama 2 tahun. Bidang utama Saya adalah
+                        <span class="hl">Pendidikan Matematika</span> dan Saya sekarang bekerja sebagai guru matematika di SMK Nurul Huda sejak awal 2020. Saya juga telah bekerja untuk platform pembelajaran web digital seperti
                         <span class="hl"><a id="link" href="http://progate.com">Progate Indonesia</a></span>
-                        as <span class="hl">Web Development Instructor</span> on Digital
-                        Talent Scholarship 2020. I am looking forward to collaborate with
-                        you!
+                        sebagai <span class="hl">Instruktur Pemrgorgaman Web</span> dalam Digital Talent Scholarship 2020 Batch 2. Saya berharap dapat bekerjasama dengan anda!
                     </p>
                     <div class="d-flex flex-column flex-md-row">
                         <div class="contact">
-                            <a class="btn nnt text-white font-weight-bold" id="btn-email" href="mailto:alifmaulana26@gmail.com" role="button"><i class="fa fa-envelope" aria-hidden="true"></i> Email me</a>
+                            <a class="btn nnt text-white font-weight-bold" id="btn-email" href="mailto:alifmaulana26@gmail.com" role="button"><i class="fa fa-envelope" aria-hidden="true"></i> Kirim Email</a>
                             <a href="https://github.com/alifma" class="align-middle pl-3">
                                 <i class="fab fa-2x fa-github"></i></a>
                             <a href="https://youtube.com/alifmaulana26" class="align-middle pl-3">
@@ -86,7 +80,7 @@
     <!-- Project -->
     <section class="project">
         <div class="container">
-            <h1 class="judulSection text-center mb-2 text-white">Finished Project</h1>
+            <h1 class="judulSection text-center mb-2 text-white">Beberapa Proyek Saya</h1>
             <!-- Project1 -->
             <div class="row d-flex flex-wrap p-2">
                 <div class="col-lg-8 col-sm-12">
@@ -136,43 +130,35 @@
     <!-- Education -->
     <section class="mt-4 p-2">
         <div class="container">
-            <h1 class="judulSection text-center text-white">Why hire me?</h1>
+            <h1 class="judulSection text-center text-white">Mengapa merekrut Saya?</h1>
             <div class="row lg-12 d-flex flex-wrap justify-content-around">
-                <div class="col-lg-3 mx-1 card text-white skillnya mb-3" style="background-color: #313131">
+                <div class="col-12 col-md-6 col-lg-4 card text-white mb-3" style="background-color: #313131">
                     <div class="card-body">
                         <h5 class="card-title text-center oren nnt">
-                            <strong>Educator</strong>
+                            <strong>Pendidik</strong>
                         </h5>
                         <p class="card-text" style="text-align: justify">
-                            I become Indonesian representation on the SEA-Teacher Exchange
-                            Program to teach about Mathematics on Philippines. I also teach
-                            about Web Development on Digital Talent Scholarship 2020.
+                            Saya berkesempatan menjadi salah satu perwakilan Indonesia dalam program <span class="hl">SEA-Teacher Preservice Student Exchange</span> untuk mengajar Matematika di Philippines. Saya juga berkesempatan untuk mengajar pemrograman web pada kegiatan Digital Talent Scholarship 2020.
                         </p>
                     </div>
                 </div>
-                <div class="col-lg-3 mx-1 card text-white skillnya mb-3" style="background-color: #313131">
+                <div class="col-12 col-md-6 col-lg-4 card text-white mb-3" style="background-color: #313131">
                     <div class="card-body">
                         <h5 class="card-title text-center oren nnt">
-                            <strong>Fast Typer</strong>
+                            <strong>Pengetik yang Cepat</strong>
                         </h5>
                         <p class="card-text" style="text-align: justify">
-                            I'm also known as “Astray” and become a representation of
-                            Indonesia on 7K Osu! Mania World Championship 2016 and made it
-                            to the semifinal rounds.
+                            Saya juga dikenalan sebagai "Astray" dan menjadi perwakilan Indonesia di dalam <span class="hl">7K Osu! Mania World Championship 2016</span> dan berhasili maju sampai ke babak semifinal.
                         </p>
                     </div>
                 </div>
-                <div class="col-lg-3 mx-1 card text-white skillnya mb-3" style="background-color: #313131">
+                <div class="col-12 col-md-6 col-lg-4 card text-white mb-3" style="background-color: #313131">
                     <div class="card-body">
                         <h5 class="card-title text-center oren nnt">
-                            <strong>Mathematician</strong>
+                            <strong>Matematikawan</strong>
                         </h5>
                         <p class="card-text" style="text-align: justify">
-                            Even though I have a passion for technology, I’m a
-                            mathematician. I have critical and analytical thinking,
-                            problem-solving ability, and able to share my thoughts with
-                            others.
-                        </p>
+                            Meskipun Saya berminat di teknologi, tetapi dasar Saya adalah Matematikawan. Saya memiliki kemampuan berpikir kritis dan analisis, serta mampu membagikan apa yang Saya pikirkan kepada orang lain. </p>
                     </div>
                 </div>
             </div>
@@ -220,7 +206,7 @@
                             </div>
                             <div class="carousel-item itemnya">
                                 <p class="text-justify font-italic text-white">
-                                    "Alif maulana merupakan mahasiswa bimbingan saya yang cukup
+                                    "Alif maulana merupakan mahasiswa bimbingan Saya yang cukup
                                     rajin"
                                 </p>
                                 <div class="authornya mb-2">
@@ -246,7 +232,7 @@
     <!-- container skill -->
     <aside>
         <div class="container skill py-4">
-            <h1 class="judulSection text-center text-white">Application and Skill</h1>
+            <h1 class="judulSection text-center text-white">Aplikasi dan Kemampuan</h1>
             <div class="d-flex flex-wrap justify-content-around skill-icon">
                 <img src="./img/ico3.png" alt="" />
                 <img src="./img/ico4.png" alt="" />
@@ -259,9 +245,9 @@
     <!-- Skill -->
     <!-- Start Footer -->
     <footer class="container p-4">
-        <h1 class="judulSection text-white">Get in touch</h1>
+        <h2 class="judulSection text-white">Hubungi Saya</h2>
         <p class="text-center text-white">
-            For business inquiry please send mail to
+            Untuk keperluan bisnis silakan mengirim email ke
             <span class="hl oren">alifmaulana26@gmail.com</span>
         </p>
         <a href="http://github.com/alifma" class="align-middle pr-3">
