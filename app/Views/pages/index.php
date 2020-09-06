@@ -158,7 +158,7 @@
                             <strong>Matematikawan</strong>
                         </h5>
                         <p class="card-text" style="text-align: justify">
-                            Meskipun Saya berminat di teknologi, tetapi dasar Saya adalah Matematikawan. Saya memiliki kemampuan berpikir kritis dan analisis, serta mampu membagikan apa yang Saya pikirkan kepada orang lain. </p>
+                            Meskipun Saya berminat di teknologi, tetapi dasar Saya adalah Matematikawan. Saya memiliki kemampuan berpikir kritis dan analisis, serta mampu membagikan apa yang Saya. </p>
                     </div>
                 </div>
             </div>

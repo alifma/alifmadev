@@ -26,10 +26,12 @@
             <div class="d-flex flex-wrap align-items-stretch">
                 <div class="col-lg-4 col-md-6 col-12 order-lg-1 min-vh-100 order-2 bg-white">
                     <div class="p-4 m-3">
-                        <img src="/stisla-master/assets/img/stisla-fill.svg" alt="logo" width="80" class="shadow-light rounded-circle mb-5 mt-2">
-                        <h4 class="text-dark font-weight-normal">Welcome to <span class="font-weight-bold">Alifma<span class="oren">Dev</span></span></h4>
+                        <a href="<?= base_url('/'); ?>">
+                            <h1 class="text-dark">Alifma<span class="oren">Dev</span></h1>
+                        </a>
+                        <h4 class="text-dark font-weight-normal">Welcome, please login</span></h4>
                         <?php if (!empty(session()->getFlashdata('gagal'))) { ?>
-                            <div class="alert alert-warning" role="alert">
+                            <div class="alert alert-danger" role="alert">
                                 <?= session()->getFlashdata('gagal');; ?>
                             </div>
                         <?php } ?>

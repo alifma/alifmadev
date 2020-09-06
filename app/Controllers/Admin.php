@@ -96,12 +96,14 @@ class Admin extends BaseController
     public function delPrestasi($id)
     {
         isLogin();
+        isLogin();
         $this->prestasiModel->delete($id);
         session()->setFlashdata('success', 'Prestasi berhasil dihapus');
         return redirect()->to('/admin/prestasi');
     }
     public function editPrestasi($id)
     {
+        isLogin();
         $data = [
             'title' => "Edit Prestasi",
             'header' => 'Ubah Prestasi',
@@ -113,6 +115,7 @@ class Admin extends BaseController
 
     public function updatePrestasi($id)
     {
+        isLogin();
         // Cek Judul
         $namaLama = $this->prestasiModel->getPrestasi($this->request->getVar('id'));
         if ($namaLama['nama'] == $this->request->getVar('nama')) {
