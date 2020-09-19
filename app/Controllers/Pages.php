@@ -3,16 +3,21 @@
 namespace App\Controllers;
 
 use App\Models\PrestasiModel;
+use App\Models\ProjectModel;
 use App\Models\SaranModel;
 
 class Pages extends BaseController
 {
+    protected $session;
     protected $saranModel;
     protected $prestasiModel;
+    protected $projectModel;
     public function __construct()
     {
+        $session = \Config\Services::session();
         $this->saranModel = new SaranModel();
         $this->prestasiModel = new PrestasiModel();
+        $this->projectModel = new ProjectModel();
     }
     public function index()
     {
@@ -31,12 +36,31 @@ class Pages extends BaseController
     }
     public function project()
     {
+        $project = $this->projectModel
+            ->orderBy('created_at', 'desc')
+            ->getProject();
         $data = [
             'title' => 'Project',
+            'project' => $project
         ];
         return view('pages/project', $data);
     }
 
+    public function projectDetail($id)
+    {
+        $project = $this->projectModel
+            ->getProject($id);
+        if ($project == null) {
+            session()->setFlashdata('gagal', 'Proyek tidak ditemukan!');
+            return redirect()->to(base_url('project'));
+        } else {
+            $data = [
+                'title' => 'Project Detail',
+                'project' => $project
+            ];
+            return view('pages/projectDetail', $data);
+        }
+    }
     public function blog()
     {
         $data = [
