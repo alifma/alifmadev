@@ -13,17 +13,16 @@
                             <th>#</th>
                             <th>Nama</th>
                             <th>Deskripsi</th>
-                            <th>Tahun</th>
                             <th>Tanggal </th>
                             <th>Aksi</th>
                         </tr>
+
                         <?php $i = 1 ?>
                         <?php foreach ($prestasi as $d) : ?>
                             <tr>
                                 <td><?= $i++; ?></td>
                                 <td><?= $d['nama']; ?></td>
                                 <td><?= $d['deskripsi']; ?></td>
-                                <td><?= $d['tahun']; ?></td>
                                 <td><?= $d['tgl']; ?></td>
                                 <td>
                                     <a href="/admin/delPrestasi/<?= $d['id']; ?>" class="btn btn-sm btn-danger">Hapus</a>

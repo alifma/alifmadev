@@ -26,7 +26,7 @@ class Pages extends BaseController
     public function profile()
     {
         $prestasi = $this->prestasiModel
-            ->orderBy('created_at', 'desc')
+            ->orderBy('tgl', 'desc')
             ->getPrestasi();
         $data = [
             'title' => 'Profile',
@@ -82,7 +82,7 @@ class Pages extends BaseController
     public function addSaran()
     {
         $data = [
-            'title' => "Add Saran",
+            'title' => "Kontak",
             'validation' => \Config\Services::validation()
         ];
         return view('pages/saran', $data);

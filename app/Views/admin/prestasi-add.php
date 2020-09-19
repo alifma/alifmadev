@@ -14,18 +14,11 @@
                         <?= $validation->getError('nama'); ?>
                     </div>
                 </div>
-                <div class=" form-group col-md-3">
+                <div class=" form-group col-md-5">
                     <label>Tanggal</label>
                     <input type="date" class="form-control <?= ($validation->hasError('tgl') ? 'is-invalid' : ''); ?>" id="tgl" name="tgl">
                     <div class="invalid-feedback">
                         <?= $validation->getError('tgl'); ?>
-                    </div>
-                </div>
-                <div class="form-group col-md-2">
-                    <label>Tahun</label>
-                    <input type="text" class="form-control text-center <?= ($validation->hasError('tahun') ? 'is-invalid' : ''); ?>" value="<?= date('Y'); ?>" id="tahun" name="tahun">
-                    <div class="invalid-feedback">
-                        <?= $validation->getError('tahun'); ?>
                     </div>
                 </div>
             </div>

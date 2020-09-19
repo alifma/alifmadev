@@ -2,7 +2,7 @@
 <?= $this->section('content'); ?>
 <div class="container">
     <div class="row mb-4">
-        <img src="/img/<?= $project['logo']; ?>" class="img-fluid mx-auto" style="max-height: 300px;">
+        <img src="/img/<?= $project['logo']; ?>" class="img-fluid mx-auto" style="background-size:cover;height: 250px;">
 
     </div>
     <h1 class="oren mb-0"><?= $project['name']; ?></h1>

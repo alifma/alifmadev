@@ -65,7 +65,7 @@
                             <a href="#" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Dashboard</span></a>
                             <ul class="dropdown-menu">
                                 <li><a class="nav-link" href="<?= base_url('/admin/kerja'); ?>">Catatan Project</a></li>
-                                <li><a class="nav-link" href="<?= base_url('/admin/kerja'); ?>">Catatan Kerjaan</a></li>
+                                <li><a class="nav-link" href="<?= base_url('/admin/project'); ?>">Daftar Proyek</a></li>
                                 <li><a class="nav-link" href="<?= base_url('/admin/saran'); ?>">Saran</a></li>
                             </ul>
                         </li>
@@ -137,7 +137,7 @@
     <script>
         tinymce.init({
             selector: 'textarea',
-            plugins: 'a11ychecker advcode casechange formatpainter linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tinycomments tinymcespellchecker',
+            plugins: ' autolink lists media  table',
             toolbar: 'a11ycheck addcomment showcomments casechange checklist code formatpainter pageembed permanentpen table',
             toolbar_mode: 'floating',
             tinycomments_mode: 'embedded',

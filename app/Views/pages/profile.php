@@ -177,7 +177,7 @@
 
                             <div class="accordion">
                                 <div class="accordion-header collapsed" role="button" data-toggle="collapse" data-target="#panel-body-<?= $i; ?>" aria-expanded="false">
-                                    <h4><?= $p['nama']; ?></h4>
+                                    <h4><?= $p['nama']; ?> (<?= date('Y', strtotime($p['tgl'])); ?>)</h4>
                                 </div>
                                 <div class="accordion-body collapse" id="panel-body-<?= $i++; ?>" data-parent="#accordion" style="">
                                     <p class="mb-0 text-justify"><?= $p['deskripsi']; ?></p>

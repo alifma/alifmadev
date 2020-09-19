@@ -39,6 +39,7 @@ $routes->get('/profile', 'Pages::profile');
 $routes->get('/blog', 'Pages::blog');
 $routes->get('/backend', 'Admin::login');
 $routes->get('/ngadaftar', 'Admin::signup');
+$routes->get('/admin/project/new', 'Admin::addProject');
 
 /**
  * --------------------------------------------------------------------
