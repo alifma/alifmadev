@@ -22,7 +22,7 @@
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title text-center  oren ">Detail</h5>
-                    <p class="card-text"><b>Published :</b> <?= $project['created_at']; ?></p>
+                    <p class="card-text"><b>Published :</b> <?= $project['tgl']; ?></p>
                     <p class="card-text"><b>Platform :</b> <?= $project['platform']; ?> <i class="text-dark <?= $project['ico']; ?>"></i></p>
                     <p class="card-text"><b>Ukuran :</b> <?= $project['size']; ?></p>
                     <a href="<?= $project['link']; ?>" class="mx-auto btn btn-primary">Unduh</a>

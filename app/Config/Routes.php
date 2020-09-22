@@ -40,6 +40,8 @@ $routes->get('/blog', 'Pages::blog');
 $routes->get('/backend', 'Admin::login');
 $routes->get('/ngadaftar', 'Admin::signup');
 $routes->get('/admin/project/new', 'Admin::addProject');
+$routes->get('/admin/project/edit/(:num)', 'Admin::editProject/$1');
+$routes->get('/admin/project/update/(:num)', 'Admin::updateProject($1)');
 
 /**
  * --------------------------------------------------------------------

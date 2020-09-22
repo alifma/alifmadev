@@ -37,7 +37,7 @@ class Pages extends BaseController
     public function project()
     {
         $project = $this->projectModel
-            ->orderBy('created_at', 'desc')
+            ->orderBy('tgl', 'desc')
             ->getProject();
         $data = [
             'title' => 'Project',

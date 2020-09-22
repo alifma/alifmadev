@@ -146,7 +146,7 @@ class Admin extends BaseController
     {
         isLogin();
         $project = $this->projectModel
-            ->orderBy('created_at', 'desc')
+            ->orderBy('tgl', 'desc')
             ->getProject();
         $data = [
             'title' => 'Daftar Project',
@@ -159,12 +159,22 @@ class Admin extends BaseController
     public function delProject($id)
     {
         isLogin();
+        $project = $this->projectModel->find($id);
+        if ($project['logo'] != 'default.png') {
+            // Hapus Gambar
+            unlink('img/' . $project['logo']);
+        }
+        if ($project['poster'] != 'default.png') {
+            // Hapus Gambar
+            unlink('img/' . $project['poster']);
+        }
         $this->projectModel->delete($id);
         session()->setFlashdata('success', 'Project berhasil dihapus');
         return redirect()->to('/admin/project');
     }
     public function addProject()
     {
+        isLogin();
         $data = [
             'title' => "Tambah Project",
             'header' => "Add New Project",
@@ -174,11 +184,13 @@ class Admin extends BaseController
     }
     public function saveProject()
     {
+        isLogin();
         if (!$this->validate([
             'name' => 'required',
             'subname' => 'required',
             'description' => 'required',
             'partner' => 'required',
+            'tgl' => 'required',
             'overview' => 'required',
             'achievement' => 'required',
             'platform' => 'required',
@@ -221,6 +233,7 @@ class Admin extends BaseController
             'subname' => $this->request->getVar('subname'),
             'description' => $this->request->getVar('description'),
             'partner' => $this->request->getVar('partner'),
+            'tgl' => $this->request->getVar('tgl'),
             'overview' => $this->request->getVar('overview'),
             'achievement' => $this->request->getVar('achievement'),
             'platform' => $this->request->getVar('platform'),
@@ -231,6 +244,100 @@ class Admin extends BaseController
             'poster' => $namaPoster,
         ]);
         session()->setFlashdata('pesan', 'Data berhasil ditambahkan');
+        return redirect()->to('/admin/project');
+    }
+    public function editProject($id)
+    {
+        isLogin();
+        $project = $this->projectModel
+            ->getProject($id);
+        $data = [
+            'title' => "Update Project",
+            'header' => "Edit Your Project",
+            'validation' => \Config\Services::validation(),
+            'project' => $project
+        ];
+        return view('admin/project-edit', $data);
+    }
+    public function update($id)
+    {
+        // Cek Judul
+        if (!$this->validate([
+            'name' => 'required',
+            'subname' => 'required',
+            'description' => 'required',
+            'partner' => 'required',
+            'tgl' => 'required',
+            'overview' => 'required',
+            'achievement' => 'required',
+            'platform' => 'required',
+            'ico' => 'required',
+            'size' => 'required',
+            'link' => 'required',
+            'logo' => [
+                'rules' => 'max_size[logo,1024]|is_image[logo]|mime_in[logo,image/jpg,image/jpeg,image/png]',
+                'errors' => [
+                    'max_size' => 'File is too large',
+                    'is_image' => 'File must an image',
+                    'mime_in' => 'File must an image'
+                ]
+            ],
+            'poster' => [
+                'rules' => 'max_size[poster,1024]|is_image[poster]|mime_in[poster,image/jpg,image/jpeg,image/png]',
+                'errors' => [
+                    'max_size' => 'File is too large',
+                    'is_image' => 'File must an image',
+                    'mime_in' => 'File must an image'
+                ]
+            ]
+        ])) {
+            return redirect()->to('/admin/project/edit/' . $this->request->getVar('id'))->withInput();
+        }
+        // Ambil logo
+        $fileLogo = $this->request->getFile('logo');
+        // Cek logo ada apa enggak
+        if ($fileLogo->getError() == 4) {
+            $namaLogo = $this->request->getVar('logoLama');
+        } else {
+            // Generate nama file Random
+            $namaLogo = $fileLogo->getRandomName();
+            $fileLogo->move('img', $namaLogo);
+            if ($this->request->getVar('logoLama') != 'default.png') {
+                unlink('img/' . $this->request->getVar('logoLama'));
+            }
+        }
+
+        // Ambil poster
+        $filePoster = $this->request->getFile('poster');
+        // Cek poster ada apa enggak
+        if ($filePoster->getError() == 4) {
+            $namaPoster = $this->request->getVar('posterLama');
+        } else {
+            // Generate nama file Random
+            $namaPoster = $filePoster->getRandomName();
+            $filePoster->move('img', $namaPoster);
+            if ($this->request->getVar('posterLama') != 'default.png') {
+                unlink('img/' . $this->request->getVar('posterLama'));
+            }
+        }
+
+        $this->projectModel->save([
+            'id' => $id,
+            'name' => $this->request->getVar('name'),
+            'subname' => $this->request->getVar('subname'),
+            'description' => $this->request->getVar('description'),
+            'partner' => $this->request->getVar('partner'),
+            'tgl' => $this->request->getVar('tgl'),
+            'overview' => $this->request->getVar('overview'),
+            'achievement' => $this->request->getVar('achievement'),
+            'platform' => $this->request->getVar('platform'),
+            'ico' => $this->request->getVar('ico'),
+            'size' => $this->request->getVar('size'),
+            'link' => $this->request->getVar('link'),
+            'logo' => $namaLogo,
+            'poster' => $namaPoster
+        ]);
+        session()->setFlashdata('pesan', 'Data berhasil diubah ');
         return redirect()->to('/admin/project');
     }
 }

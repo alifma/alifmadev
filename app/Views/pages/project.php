@@ -11,17 +11,18 @@
     <div class="row">
         <div class="col">
             <?php foreach ($project as $p) : ?>
-                <div class="card mb-3 p-2" style="">
+                <div class="card mb-3 p-2">
                     <div class="row g-0">
                         <div class="col-md-4 my-auto">
                             <img src="/img/<?= $p['poster']; ?>" class="rounded img-responsive img-fluid">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
-                                <h3 class="card-title oren mb-0 "><?= $p['name']; ?></h3>
+                                <h3 class="card-title mb-0 "><?= $p['name']; ?> </h3>
                                 <p class="nnt font-weight-bold mb-0"><?= $p['subname']; ?></p>
                                 <p class="card-text text-justify mb-0"><?= $p['description']; ?></p>
-                                <p class="nnt font-weight-bold mb-0"> Platform : <?= $p['platform']; ?> <i class="text-dark <?= $p['ico']; ?>"> </p></i>
+                                <p class="nnt font-weight-bold mb-0"> Dibuat : <?= $p['tgl']; ?> </p>
+                                <p class="nnt font-weight-bold mb-0"> Platform : <?= $p['platform']; ?> <i class="text-dark <?= $p['ico']; ?>"></i> </p>
                                 <a href="<?= base_url('/project'); ?>/<?= $p['id']; ?>" class="btn btn-warning">Lihat Detail</a>
                             </div>
                         </div>

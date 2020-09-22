@@ -8,7 +8,7 @@ class ProjectModel extends Model
 {
     protected $table = 'project';
     protected $useTimestamps = true;
-    protected $allowedFields = ['name', 'subname', 'description', 'overview', 'achievement', 'partner', 'platform', 'ico', 'size', 'link', 'logo', 'poster'];
+    protected $allowedFields = ['name', 'subname', 'description', 'tgl', 'overview', 'achievement', 'partner', 'platform', 'ico', 'size', 'link', 'logo', 'poster'];
     public function getProject($id = false)
     {
         if ($id == false) {

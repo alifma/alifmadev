@@ -150,6 +150,29 @@
     <script src="/stisla-master/assets/js/custom.js"></script>
 
     <!-- Page Specific JS File -->
+    <script>
+        function previewImg1() {
+            const logo = document.querySelector('#logo');
+            const imgPreview = document.querySelector('.img-preview1');
+            // Ganti Preview
+            const fileLogo = new FileReader();
+            fileLogo.readAsDataURL(logo.files[0]);
+            fileLogo.onload = function(e) {
+                imgPreview.src = e.target.result;
+            }
+        }
+
+        function previewImg2() {
+            const poster = document.querySelector('#poster');
+            const imgPreview = document.querySelector('.img-preview2');
+            // Ganti Preview
+            const filePoster = new FileReader();
+            filePoster.readAsDataURL(poster.files[0]);
+            filePoster.onload = function(e) {
+                imgPreview.src = e.target.result;
+            }
+        }
+    </script>
 </body>
 
 </html>

@@ -99,7 +99,7 @@
             <!-- Project1 -->
             <div class="row d-flex flex-wrap p-2">
                 <div class="col-lg-8 col-sm-12">
-                    <img src="./img/0-SEAD.png" class="img-fluid skillgmbr" alt="..." />
+                    <img src="./img/0-Sead.png" class="img-fluid skillgmbr" alt="..." />
                 </div>
                 <div class="col-lg-4 col-sm-12 mt-2">
                     <h1 class="oren nnt">SEAD</h1>

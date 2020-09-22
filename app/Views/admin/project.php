@@ -13,18 +13,17 @@
                             <th class="text-center">#</th>
                             <th class="text-center">Nama</th>
                             <th class="text-center">Partner</th>
-                            <th class="text-center">Waktu</th>
+                            <th class="text-center">Tanggal</th>
                             <th class="text-center">Aksi</th>
                         </tr>
                         <?php $i = 1 ?>
-
                         <?php foreach ($project as $p) : ?>
                             <tr>
                                 <td class="text-center"><?= $i++; ?></td>
                                 <td><?= $p['name']; ?> (<?= $p['subname']; ?>)</td>
                                 <td class="text-center"><?= $p['partner']; ?></td>
-                                <td class="text-center"><?= $p['created_at']; ?></td>
-                                <td class="text-center"><a href="/admin/delProject/<?= $p['id']; ?>" class="btn btn-sm btn-success">Edit</a> <a href="/admin/delProject/<?= $p['id']; ?>" class="btn btn-sm btn-danger">Hapus</a></td>
+                                <td class="text-center"><?= $p['tgl']; ?></td>
+                                <td class="text-center"><a href="/admin/project/edit/<?= $p['id']; ?>" class="btn btn-sm btn-success">Edit</a> <a href="/admin/delProject/<?= $p['id']; ?>" class="btn btn-sm btn-danger">Hapus</a></td>
                             </tr>
                         <?php endforeach; ?>
                     </table>
