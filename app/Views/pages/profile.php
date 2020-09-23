@@ -118,13 +118,9 @@
                 </div>
                 <div class="card-body">
                     <div class="badges text-center">
-                        <p class="font-weight-bold badge badge-info nnt" style="font-size:1em">Web App Development</p>
-                        <p class="font-weight-bold badge badge-success nnt" style="font-size:1em">Android App Development</p>
-                        <p class="font-weight-bold badge badge-dark nnt" style="font-size:1em">UI Design</p>
-                        <p class="font-weight-bold badge badge-primary nnt" style="font-size:1em">SQL Database</p>
-                        <p class="font-weight-bold badge nnt text-white" style=" background-color:#001d26;font-size:1em">Photo Editing</p>
-                        <p class="font-weight-bold badge badge-danger nnt" style="font-size:1em">CodeIgniter Framework</p>
-
+                        <?php foreach ($skill as $s) : ?>
+                            <p class="font-weight-bold badge text-white nnt" style="font-size:1em; background-color:<?= $s['color']; ?>"><?= $s['skill']; ?></p>
+                        <?php endforeach; ?>
                     </div>
                 </div>
             </div>
@@ -185,45 +181,6 @@
                             </div>
 
                         <?php endforeach; ?>
-                        <!-- <div class="accordion">
-                            <div class="accordion-header collapsed" role="button" data-toggle="collapse" data-target="#panel-body-2" aria-expanded="false">
-                                <h4>Panel 2</h4>
-                            </div>
-                            <div class="accordion-body collapse" id="panel-body-2" data-parent="#accordion" style="">
-                                <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                            </div>
-                        </div>
-                        <div class="accordion">
-                            <div class="accordion-header collapsed" role="button" data-toggle="collapse" data-target="#panel-body-3" aria-expanded="false">
-                                <h4>Panel 3</h4>
-                            </div>
-                            <div class="accordion-body collapse" id="panel-body-3" data-parent="#accordion" style="">
-                                <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                            </div>
-                        </div>
-                        <div class="accordion">
-                            <div class="accordion-header collapsed" role="button" data-toggle="collapse" data-target="#panel-body-4" aria-expanded="false">
-                                <h4>Panel 4</h4>
-                            </div>
-                            <div class="accordion-body collapse" id="panel-body-4" data-parent="#accordion" style="">
-                                <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                            </div>
-                        </div> -->
                     </div>
                 </div>
             </div>

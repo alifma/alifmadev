@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Models\PrestasiModel;
 use App\Models\ProjectModel;
 use App\Models\SaranModel;
+use App\Models\SkillModel;
 
 class Pages extends BaseController
 {
@@ -12,12 +13,14 @@ class Pages extends BaseController
     protected $saranModel;
     protected $prestasiModel;
     protected $projectModel;
+    protected $skillModel;
     public function __construct()
     {
         $session = \Config\Services::session();
         $this->saranModel = new SaranModel();
         $this->prestasiModel = new PrestasiModel();
         $this->projectModel = new ProjectModel();
+        $this->skillModel = new SkillModel();
     }
     public function index()
     {
@@ -28,9 +31,11 @@ class Pages extends BaseController
         $prestasi = $this->prestasiModel
             ->orderBy('tgl', 'desc')
             ->getPrestasi();
+        $skill = $this->skillModel->getSkill();
         $data = [
             'title' => 'Profile',
-            'prestasi' => $prestasi
+            'prestasi' => $prestasi,
+            'skill' => $skill,
         ];
         return view('pages/profile', $data);
     }

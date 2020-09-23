@@ -42,6 +42,10 @@ $routes->get('/ngadaftar', 'Admin::signup');
 $routes->get('/admin/project/new', 'Admin::addProject');
 $routes->get('/admin/project/edit/(:num)', 'Admin::editProject/$1');
 $routes->get('/admin/project/update/(:num)', 'Admin::updateProject($1)');
+$routes->get('/admin/skill', 'Skill::index');
+$routes->get('/admin/skill/add', 'Skill::addSkill');
+$routes->get('/admin/skill/save', 'Skill::saveSkill');
+
 
 /**
  * --------------------------------------------------------------------
