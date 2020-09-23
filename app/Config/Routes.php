@@ -45,6 +45,9 @@ $routes->get('/admin/project/update/(:num)', 'Admin::updateProject($1)');
 $routes->get('/admin/skill', 'Skill::index');
 $routes->get('/admin/skill/add', 'Skill::addSkill');
 $routes->get('/admin/skill/save', 'Skill::saveSkill');
+$routes->get('/admin/org', 'Org::index');
+$routes->get('/admin/org/add', 'Org::addOrg');
+$routes->get('/admin/org/save', 'Org::saveOrg');
 
 
 /**
