@@ -73,41 +73,20 @@
                 </div>
                 <div class="card-body">
                     <ul class="list-unstyled">
-                        <li class="media">
-                            <div class="mr-3  my-auto">
-                                <img class="mx-auto" src="/img/logo-smknh.png" width="100px" alt="Generic placeholder image">
-                            </div>
-                            <div class="media-body">
-                                <h5 class="mt-0">Guru Matematika</h5>
-                                <p class="font-weight-bold my-0 nnt text-muted">SMK Nurul Huda Baros</p>
-                                <p style="text-align:justify" class="mb-0 nnt"> Menjadi guru matematika untuk mengajar di 3 jurusan dan menjadi wali kelas dari kelas XI MM2</p>
-                                <p class="font-weight-bold my-0 text-right">Juli 2020 - Sekarang</p>
-                            </div>
-                        </li>
-                        <hr>
-                        <li class="media">
-                            <div class="mr-3  my-auto">
-                                <img class="mx-auto" src="/img/logo-progate.png" width="100px" alt="Generic placeholder image">
-                            </div>
-                            <div class="media-body">
-                                <h5 class="mt-0">Mentor Ready Set Code Batch 1</h5>
-                                <p class="font-weight-bold my-0 nnt text-muted">Progate Indonesia</p>
-                                <p style="text-align:justify" class="mb-0 nnt"> Menjadi mentor untuk kelas Front-end pengajar yang berisi lebih dari 1600 orang guru SMA, SMK dan Perguruan Tinggi Vokasi selama 5 minggu.</p>
-                                <p class="font-weight-bold my-0 text-right">Agustus - September 2020</p>
-                            </div>
-                        </li>
-                        <hr>
-                        <li class="media">
-                            <div class="mr-3  my-auto">
-                                <img class="mx-auto" src="/img/logo-dts.png" width="100px" alt="Generic placeholder image">
-                            </div>
-                            <div class="media-body">
-                                <h5 class="mt-0">Instruktur DTS 2020 Batch 2</h5>
-                                <p class="font-weight-bold my-0 nnt text-muted">Progate Indonesia</p>
-                                <p style="text-align:justify" class="mb-0 nnt"> Menjadi relawan instruktur untuk kelas pemrograman web digital talent scholarship 2020 dengan lebih dari 3600 peserta.</p>
-                                <p class="font-weight-bold my-0 text-right">Juni - Agustus 2020</p>
-                            </div>
-                        </li>
+                        <?php foreach ($exp as $e) : ?>
+                            <li class="media">
+                                <div class="mr-3  my-auto">
+                                    <img class="mx-auto" src="/img/exp/<?= $e['logo']; ?>" width="100px" alt="Generic placeholder image">
+                                </div>
+                                <div class="media-body">
+                                    <h5 class="mt-0"><?= $e['posisi']; ?></h5>
+                                    <p class="font-weight-bold my-0 nnt text-muted"><?= $e['nama']; ?></p>
+                                    <p style="text-align:justify" class="mb-0 nnt"><?= $e['deskripsi']; ?></p>
+                                    <p class="font-weight-bold my-0 text-right"><?= $e['periode']; ?></p>
+                                </div>
+                            </li>
+                            <hr>
+                        <?php endforeach; ?>
                     </ul>
                 </div>
             </div>
@@ -133,29 +112,16 @@
                     <h3 class="oren">Organisasi</h3>
                 </div>
                 <div class="card-body">
-                    <div class="media">
-                        <div class="media-body ">
-                            <h5 class="mt-0 mb-1">Progate Indonesia</h5>
-                            <p class="font-weight-bold my-0 nnt text-muted">Anggota (2020 - Sekarang)</p>
-                            <p style="text-align:justify" class="mb-0">Komunitas Progate Indonesia adalah komunitas untuk bertukar informasi dan wawasan seputar teknologi terutama di pengembangan web baik back-end maupun front-end di Indonesia.</p>
+                    <?php foreach ($org as $o) : ?>
+                        <div class="media">
+                            <div class="media-body ">
+                                <h5 class="mt-0 mb-1"><?= $o['nama']; ?></h5>
+                                <p class="font-weight-bold my-0 nnt text-muted"><?= $o['subnama']; ?></p>
+                                <p style="text-align:justify" class="mb-0"><?= $o['description']; ?></p>
+                            </div>
                         </div>
-                    </div>
-                    <hr>
-                    <div class="media">
-                        <div class="media-body">
-                            <h5 class="mt-0 mb-1">Android Developer Serang</h5>
-                            <p class="font-weight-bold my-0 nnt text-muted">Anggota (2019 - Sekarang)</p>
-                            <p style="text-align:justify" class="mb-0">Komunitas yang beranggotakan pelajar, mahasiswa dan umum untuk berbagi informasi, ilmu serta belajar bersama mengenai pengembangan aplikasi Android di Kota Serang.</p>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="media">
-                        <div class="media-body">
-                            <h5 class="mt-0 mb-1">Asisten Laboratorium Komputer dan Pendidikan Matematika Untirta</h5>
-                            <p class="font-weight-bold my-0 nnt text-muted">Koordinator (2019-2020) | Anggota (2017-2019)</p>
-                            <p style="text-align:justify" class="mb-0">Komunitas yang beranggotakan pelajar, mahasiswa dan umum untuk berbagi informasi, ilmu serta belajar bersama mengenai pengembangan aplikasi Android di Kota Serang.</p>
-                        </div>
-                    </div>
+                        <hr>
+                    <?php endforeach; ?>
                 </div>
             </div>
             <!-- End Organisasi -->

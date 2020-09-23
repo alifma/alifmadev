@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 
+use App\Models\ExpModel;
+use App\Models\OrgModel;
 use App\Models\PrestasiModel;
 use App\Models\ProjectModel;
 use App\Models\SaranModel;
@@ -13,7 +15,9 @@ class Pages extends BaseController
     protected $saranModel;
     protected $prestasiModel;
     protected $projectModel;
+    protected $orgModel;
     protected $skillModel;
+    protected $expModel;
     public function __construct()
     {
         $session = \Config\Services::session();
@@ -21,6 +25,8 @@ class Pages extends BaseController
         $this->prestasiModel = new PrestasiModel();
         $this->projectModel = new ProjectModel();
         $this->skillModel = new SkillModel();
+        $this->orgModel = new OrgModel();
+        $this->expModel = new ExpModel();
     }
     public function index()
     {
@@ -32,10 +38,14 @@ class Pages extends BaseController
             ->orderBy('tgl', 'desc')
             ->getPrestasi();
         $skill = $this->skillModel->getSkill();
+        $org = $this->orgModel->orderBy('tgl', 'desc')->getOrg();
+        $exp = $this->expModel->orderBy('tgl', 'desc')->getExp();
         $data = [
             'title' => 'Profile',
             'prestasi' => $prestasi,
             'skill' => $skill,
+            'org' => $org,
+            'exp' => $exp,
         ];
         return view('pages/profile', $data);
     }
