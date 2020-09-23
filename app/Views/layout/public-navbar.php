@@ -14,9 +14,6 @@
                     <a class="nav-link nnt font-weight-bold" href="<?= base_url('/project'); ?>">Proyek</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link nnt font-weight-bold" href="<?= base_url('/blog'); ?>">Blog</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link nnt font-weight-bold" href="<?= base_url('/contact'); ?>">Kontak</a>
                 </li>
             </ul>

@@ -32,16 +32,13 @@
                 <ul class="navbar-nav navbar-right">
 
                     <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-                            <img alt="image" src="/stisla-master/assets/img/avatar/avatar-admin.png" class="rounded-circle mr-1">
-                            <div class="d-sm-none d-lg-inline-block">Hi, <?= session()->get('nama'); ?></div>
+                            <img alt="image" src="/img/<?= $loggedUser['avatar']; ?>" class="rounded-circle mr-1">
+                            <div class="d-sm-none d-lg-inline-block">Hi, <?= $loggedUser['nama']; ?></div>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
-                            <div class="dropdown-title">Logged in 5 min ago</div>
-                            <a href="features-profile.html" class="dropdown-item has-icon">
-                                <i class="far fa-user"></i> Profile
-                            </a>
-                            <a href="features-settings.html" class="dropdown-item has-icon">
-                                <i class="fas fa-cog"></i> Settings
+                            <div class="dropdown-title">User menu</div>
+                            <a href="<?= base_url('/admin/profile/'); ?>" class="dropdown-item has-icon">
+                                <i class="far fa-user"></i> Profile & Settings
                             </a>
                             <div class="dropdown-divider"></div>
                             <a href="<?= base_url('/login/logout'); ?>" class="dropdown-item has-icon text-danger">
@@ -54,10 +51,10 @@
             <div class="main-sidebar">
                 <aside id="sidebar-wrapper">
                     <div class="sidebar-brand">
-                        <a href="index.html">Alifma<span class="oren">Dev</span></a>
+                        <a href="<?= base_url('/admin'); ?>">Alifma<span class="oren">Dev</span></a>
                     </div>
                     <div class="sidebar-brand sidebar-brand-sm">
-                        <a href="index.html">AM<span class="oren">D</span></a>
+                        <a href="<?= base_url('/admin'); ?>">AM<span class="oren">D</span></a>
                     </div>
                     <ul class="sidebar-menu">
                         <li class="menu-header">Dashboard</li>
@@ -169,6 +166,17 @@
             const filePoster = new FileReader();
             filePoster.readAsDataURL(poster.files[0]);
             filePoster.onload = function(e) {
+                imgPreview.src = e.target.result;
+            }
+        }
+
+        function avaPreview() {
+            const avatar = document.querySelector('#avatar');
+            const imgPreview = document.querySelector('.ava-preview');
+            // Ganti Preview
+            const fileavatar = new FileReader();
+            fileavatar.readAsDataURL(avatar.files[0]);
+            fileavatar.onload = function(e) {
                 imgPreview.src = e.target.result;
             }
         }

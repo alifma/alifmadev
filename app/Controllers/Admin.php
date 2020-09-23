@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\LoginModel;
 use App\Models\PrestasiModel;
 use App\Models\ProjectModel;
 use App\Models\SaranModel;
@@ -11,18 +12,29 @@ class Admin extends BaseController
     protected $saranModel;
     protected $prestasiModel;
     protected $projectModel;
+    protected $loginModel;
+    protected $loggedUser;
     public function __construct()
     {
         $this->saranModel = new SaranModel();
         $this->prestasiModel = new PrestasiModel();
         $this->projectModel = new ProjectModel();
+        $this->loginModel = new LoginModel();
     }
     public function index()
     {
         isLogin();
+        $project = $this->projectModel->countAllResults();
+        $saran = $this->saranModel->countAllResults();
+        $user = $this->loginModel->countAllResults();
+        $loggedUser = $this->loginModel->find(session()->get('id'));
         $data = [
             'title' => 'Dashboard',
-            'header' => 'Admin Dashboard'
+            'header' => 'Admin Dashboard',
+            'project' => $project,
+            'saran' => $saran,
+            'user' => $user,
+            'loggedUser' => $loggedUser
         ];
         return view('admin/index', $data);
     }
@@ -48,39 +60,49 @@ class Admin extends BaseController
     {
         isLogin();
         $saran = $this->saranModel->getSaran();
+        $loggedUser = $this->loginModel->find(session()->get('id'));
+
         $data = [
             'title' => 'Saran',
             'saran' => $saran,
-            'header' => 'Daftar Saran'
+            'header' => 'Daftar Saran',
+            'loggedUser' => $loggedUser
         ];
         return view('admin/saran', $data);
     }
     public function prestasi()
     {
         isLogin();
+        $loggedUser = $this->loginModel->find(session()->get('id'));
+
         $prestasi = $this->prestasiModel
             ->orderBy('tgl', 'desc')
             ->getPrestasi();
         $data = [
             'title' => 'Prestasi',
             'prestasi' => $prestasi,
-            'header' => 'Daftar Prestasi'
+            'header' => 'Daftar Prestasi',
+            'loggedUser' => $loggedUser
         ];
         return view('admin/prestasi', $data);
     }
     public function addPrestasi()
     {
         isLogin();
+        $loggedUser = $this->loginModel->find(session()->get('id'));
+
         $data = [
             'title' => 'Prestasi',
             'header' => 'Tambah Prestasi',
-            'validation' => \Config\Services::validation()
+            'validation' => \Config\Services::validation(),
+            'loggedUser' => $loggedUser
         ];
         return view('admin/prestasi-add', $data);
     }
     public function savePrestasi()
     {
         isLogin();
+
         if (!$this->validate([
             'nama' => 'required',
             'deskripsi' => 'required',
@@ -106,11 +128,14 @@ class Admin extends BaseController
     public function editPrestasi($id)
     {
         isLogin();
+        $loggedUser = $this->loginModel->find(session()->get('id'));
+
         $data = [
             'title' => "Edit Prestasi",
             'header' => 'Ubah Prestasi',
             'validation' => \Config\Services::validation(),
-            'prestasi' => $this->prestasiModel->getPrestasi($id)
+            'prestasi' => $this->prestasiModel->getPrestasi($id),
+            'loggedUser' => $loggedUser
         ];
         return view('admin/prestasi-edit', $data);
     }
@@ -145,13 +170,16 @@ class Admin extends BaseController
     public function Project()
     {
         isLogin();
+        $loggedUser = $this->loginModel->find(session()->get('id'));
+
         $project = $this->projectModel
             ->orderBy('tgl', 'desc')
             ->getProject();
         $data = [
             'title' => 'Daftar Project',
             'project' => $project,
-            'header' => 'Daftar Project'
+            'header' => 'Daftar Project',
+            'loggedUser' => $loggedUser
         ];
         return view('admin/project', $data);
     }
@@ -175,10 +203,13 @@ class Admin extends BaseController
     public function addProject()
     {
         isLogin();
+        $loggedUser = $this->loginModel->find(session()->get('id'));
+
         $data = [
             'title' => "Tambah Project",
             'header' => "Add New Project",
-            'validation' => \Config\Services::validation()
+            'validation' => \Config\Services::validation(),
+            'loggedUser' => $loggedUser
         ];
         return view('admin/project-add', $data);
     }
@@ -249,13 +280,16 @@ class Admin extends BaseController
     public function editProject($id)
     {
         isLogin();
+        $loggedUser = $this->loginModel->find(session()->get('id'));
+
         $project = $this->projectModel
             ->getProject($id);
         $data = [
             'title' => "Update Project",
             'header' => "Edit Your Project",
             'validation' => \Config\Services::validation(),
-            'project' => $project
+            'project' => $project,
+            'loggedUser' => $loggedUser
         ];
         return view('admin/project-edit', $data);
     }
@@ -339,5 +373,67 @@ class Admin extends BaseController
         ]);
         session()->setFlashdata('pesan', 'Data berhasil diubah ');
         return redirect()->to('/admin/project');
+    }
+    public function profile()
+    {
+        isLogin();
+        $user = $this->loginModel->find(session()->get('id'));
+        $loggedUser = $this->loginModel->find(session()->get('id'));
+
+        $data = [
+            'title' => 'Profile',
+            'header' => 'User Profile',
+            'validation' => \Config\Services::validation(),
+            'user' => $user,
+            'loggedUser' => $loggedUser
+        ];
+        return view('admin/profile', $data);
+    }
+    public function updateProfile($id)
+    {
+        // Cek Judul
+        isLogin();
+
+        if (!$this->validate([
+            'avatar' => [
+                'rules' => 'max_size[avatar,1024]|is_image[avatar]|mime_in[avatar,image/jpg,image/jpeg,image/png]',
+                'errors' => [
+                    'max_size' => 'File is too large',
+                    'is_image' => 'File must an image',
+                    'mime_in' => 'File must an image'
+                ]
+            ]
+        ])) {
+            return redirect()->to('/admin/profile/')->withInput();
+        }
+        // Ambil avatar
+        $fileAvatar = $this->request->getFile('avatar');
+        // Cek logo ada apa enggak
+        if ($fileAvatar->getError() == 4) {
+            $namaAvatar = $this->request->getVar('avatarLama');
+        } else {
+            // Generate nama file Random
+            $namaAvatar = $fileAvatar->getRandomName();
+            $fileAvatar->move('img', $namaAvatar);
+            if ($this->request->getVar('avatarLama') != 'avatar-default.png') {
+                unlink('img/' . $this->request->getVar('avatarLama'));
+            }
+        }
+        if ($this->request->getVar('password')) {
+            $this->loginModel->save([
+                'id' => $id,
+                'nama' => $this->request->getVar('nama'),
+                'password' => $this->request->getVar('password'),
+                'avatar' => $namaAvatar
+            ]);
+        } else {
+            $this->loginModel->save([
+                'id' => $id,
+                'nama' => $this->request->getVar('nama'),
+                'avatar' => $namaAvatar
+            ]);
+        }
+        session()->setFlashdata('pesan', 'Data berhasil diubah ');
+        return redirect()->to('/admin/profile');
     }
 }

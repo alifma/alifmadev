@@ -260,7 +260,7 @@
             <div class="card card-primary">
                 <div class="card-body text-center">
                     <h4 class="oren">Norman Ganto</h4>
-                    <p class="my-0">Contry Manager </p>
+                    <p class="my-0">Country Manager </p>
                     <p class="my-0">of Progate Indonesia</p>
                 </div>
             </div>

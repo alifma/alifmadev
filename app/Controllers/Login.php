@@ -32,9 +32,13 @@ class Login extends BaseController
         $cek = $this->loginModel->cek_login($username, $password);
         if ($cek) {
             if (($cek['username'] == $username) && ($cek['password'] == $password)) {
+                session()->set('id', $cek['id']);
                 session()->set('username', $cek['username']);
+                session()->set('created_at', $cek['created_at']);
+                session()->set('updated_at', $cek['updated_at']);
                 session()->set('nama', $cek['nama']);
                 session()->set('level', $cek['level']);
+                session()->set('avatar', $cek['avatar']);
                 return redirect()->to(base_url('admin'));
             }
         } else {

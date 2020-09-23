@@ -31,9 +31,6 @@
                         <a class="nnt nav-link font-weight-bold " href="<?= base_url('/project'); ?>">Proyek</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nnt nav-link font-weight-bold " href="<?= base_url('/blog'); ?>">Blog</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nnt nav-link font-weight-bold " href="<?= base_url('/contact'); ?>">Kontak</a>
                     </li>
                 </ul>
@@ -44,7 +41,7 @@
     <!-- End Header -->
     <!-- Start Main -->
     <main class="bd-masthead mb-3 mb-md-5">
-        <div class="container px-4 px-md-3">
+        <div class="container px-4 px-md-3" style="vertical-align:middle">
             <div class="row align-items-lg-center">
                 <div class="col-8 mx-auto col-md-4 order-md-2 col-lg-5">
                     <img src="/img/frnt1.png" height="533" class="img-fluid mb-3 mb-md-0" alt="" />
@@ -59,7 +56,7 @@
                         <span class="hl">Pengembang Aplikasi dan Pendidik</span> selama 2 tahun. Bidang utama Saya adalah
                         <span class="hl">Pendidikan Matematika</span> dan Saya sekarang bekerja sebagai guru matematika di SMK Nurul Huda sejak awal 2020. Saya juga telah bekerja untuk platform pembelajaran web digital seperti
                         <span class="hl"><a id="link" href="http://progate.com">Progate Indonesia</a></span>
-                        sebagai <span class="hl">Instruktur Pemrgorgaman Web</span> dalam Digital Talent Scholarship 2020 Batch 2. Saya berharap dapat bekerjasama dengan anda!
+                        sebagai <span class="hl">Instruktur Pemrograman Web</span> dalam Digital Talent Scholarship 2020 Batch 2. Saya berharap dapat bekerjasama dengan anda!
                     </p>
                     <div class="d-flex flex-column flex-md-row">
                         <div class="contact">
@@ -91,8 +88,8 @@
                     <p style="text-align: justify" class="text-white">
                         Augmented Reality Mathematics for Android
                     </p>
-                    <a class="btn nnt text-white" id="btn-git" href="http://github.com/alifma/artik"><i class="fab fa-github" aria-hidden="true"></i> Github Pages</a>
-                    <a class="btn nnt text-white" id="btn-det" href="#"><i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                    <a class="btn nnt text-white " id="btn-git" disabled href="http://github.com/alifma/artik"><i class="fab fa-github" aria-hidden="true"></i> Github Pages</a>
+                    <a class="btn nnt text-white" id="btn-det" href="<?= base_url('/project/1'); ?>"><i class="fas fa-external-link-alt" aria-hidden="true"></i>
                         Details</a>
                 </div>
             </div>
@@ -106,8 +103,8 @@
                     <p style="text-align: justify " class="text-white">
                         Sistem Evaluasi Anggaran & Dana Desa
                     </p>
-                    <a class="btn nnt text-white" id="btn-git" href="http://github.com/alifma/"><i class="fab fa-github" aria-hidden="true"></i> Github Pages</a>
-                    <a class="btn nnt text-white" id="btn-det" href="#"><i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                    <a class="btn nnt text-white disabled" id="btn-git" href="http://github.com/alifma/"><i class="fab fa-github" aria-hidden="true"></i> Github Pages</a>
+                    <a class="btn nnt text-white" id="btn-det" href="<?= base_url('/project/2'); ?>"><i class="fas fa-external-link-alt" aria-hidden="true"></i>
                         Details</a>
                 </div>
             </div>
@@ -119,8 +116,8 @@
                 <div class="col-lg-4 col-sm-12 mt-2">
                     <h1 class="oren nnt">Akar</h1>
                     <p style="text-align: justify" class="text-white">Aplikasi Pintar Al-Quran & Tajwid</p>
-                    <a class="btn nnt text-white" id="btn-git" href="http://github.com/alifma/"><i class="fab fa-github" aria-hidden="true"></i> Github Pages</a>
-                    <a class="btn nnt text-white" id="btn-det" href="#"><i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                    <a class="btn nnt text-white disabled" id="btn-git" href="http://github.com/alifma/"><i class="fab fa-github" aria-hidden="true"></i> Github Pages</a>
+                    <a class="btn nnt text-white" id="btn-det" href="<?= base_url('/project/3'); ?>"><i class="fas fa-external-link-alt" aria-hidden="true"></i>
                         Details</a>
                 </div>
             </div>
@@ -189,7 +186,7 @@
                         <!-- Carousel Text -->
                         <div class="carousel-inner">
                             <div class="carousel-item active itemnya">
-                                <p class="text-justify font-italic text-white">
+                                <p class="text-justify font-italic text-white reviewnya">
                                     "Mas Alif Maulana merupakan salah satu relawan instruktur
                                     untuk program Kominfo Digital Talent Scholarship tema
                                     programming Batch II berjumlah 3.000 peserta yang di bagi 10
@@ -205,7 +202,7 @@
                                 </div>
                             </div>
                             <div class="carousel-item itemnya">
-                                <p class="text-justify font-italic text-white">
+                                <p class="text-justify font-italic text-white reviewnya">
                                     "Alif maulana merupakan mahasiswa bimbingan Saya yang cukup
                                     rajin"
                                 </p>

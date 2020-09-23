@@ -4,7 +4,7 @@
     <div class="col">
         <div class="card">
             <div class="card-body">
-                <form class="row g-3" action="/admin/update/<?= $project['id']; ?>" method="post" enctype="multipart/form-data">
+            <form class="row g-3" action="/admin/update/<?= $project['id']; ?>" method="post" enctype="multipart/form-data">
                     <?= csrf_field(); ?>
                     <input type="hidden" name="posterLama" value="<?= $project['poster']; ?>">
                     <input type="hidden" name="id" value="<?= $project['id']; ?>">
