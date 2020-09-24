@@ -41,7 +41,7 @@ class Org extends BaseController
             'description' => 'required',
             'tgl' => 'required',
         ])) {
-            return redirect()->to('/contact')->withInput();
+            return redirect()->to('/admin/org/add')->withInput();
         }
         $this->orgModel->save([
             'nama' => $this->request->getVar('nama'),

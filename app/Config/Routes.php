@@ -48,6 +48,9 @@ $routes->get('/admin/skill/save', 'Skill::saveSkill');
 $routes->get('/admin/org', 'Org::index');
 $routes->get('/admin/org/add', 'Org::addOrg');
 $routes->get('/admin/org/save', 'Org::saveOrg');
+$routes->get('/admin/exp', 'Exp::index');
+$routes->get('/admin/exp/add', 'Exp::add');
+$routes->get('/admin/exp/edit', 'Exp::edit');
 
 
 /**
